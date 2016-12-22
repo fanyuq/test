@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+			span{
+				text-align: center;
+				height: 30px;
+				font: 20px/30px "微软雅黑";
+				color: black;
+				border-radius: 5px 5px 0 0;
+				border: 1px solid gainsboro;
+				background-color: #DCDCDC;
+			}
+			.box1,
+			.box2,
+			.box3{
+				width: 350px;
+				height: 200px;
+				background: lightskyblue;
+				position: absolute;
+				display: none;
+			}
+			.box1{
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+		window.onload=function(){
+			var aSpan=document.getElementsByTagName('span');
+			var aBox=document.getElementsByTagName('div');
+			console.log(aSpan.length);
+			
+			for(var i=0;i<aSpan.length;i++){
+				aSpan[i].index=i;
+				
+				aSpan[i].onclick=function(){					
+					for(var j=1;j<i+1;j++){
+						aBox[j].style.display='none';
+					}
+					console.log(this.index+1);
+					aBox[this.index+1].style.display='block';
+				}
+			}
+		}
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<span>标签 1</span>
+			<span>标签 2</span>
+			<span>自适应宽度的标签</span>
+		</div>
+		<div class="box1">
+			第一个标签的内容
+		</div>
+		<div class="box2">
+			第二个标签的内容
+		</div>
+		<div class="box3">
+			第三个标签的内容
+		</div>
+	</body>
+</html>

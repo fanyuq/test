@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oTime=document.getElementsByClassName('time')[0];
+		setInterval(function(){
+			toTime()
+		},1000);
+		
+		function toTime(){
+			var oDate=new Date();
+			var iSec=oDate.getSeconds();
+			var iMin=Math.floor(oDate.getMinutes()+iSec/60);
+			var iHour=Math.floor((oDate.getHours())+iMin/60);
+			
+			oTime.innerHTML=iHour+"时："+iMin+"分："+iSec+'秒';
+		}
+	}
+		
+		
+	</script>
+</head>
+<body>
+	<div class="time">
+		
+	</div>
+</body>
+</html>
